@@ -13,6 +13,11 @@ public class playerMovimiento : MonoBehaviour
     private Vector3 offset;
     public Text textoEstrella;
     public Text textoVida;
+    public AudioClip audMuerteTrampa;
+    public AudioClip audMuerteCaida;
+
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -35,4 +40,12 @@ public class playerMovimiento : MonoBehaviour
     {
 
     }
+
+    private void playDeathByFallSound()
+    {
+        GameObject goPlayer = GameObject.FindWithTag("Player");
+
+        Vector3 v3PosJugador = goPlayer.transform.position;
+    }
+
 }
