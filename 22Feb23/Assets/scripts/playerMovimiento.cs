@@ -13,27 +13,37 @@ public class playerMovimiento : MonoBehaviour
     private Vector3 offset;
     public Text textoEstrella;
     public Text textoVida;
-    public AudioClip audMuerteTrampa;
-    public AudioClip audMuerteCaida;
-
+    private bool bIsAlive;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         offset = camara.transform.position;
+        bIsAlive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float movHorizontal = Input.GetAxis("Horizontal");
-        float movVertical = Input.GetAxis("Vertical");
+        
+        if (bIsAlive)
+        {
+            float movHorizontal = Input.GetAxis("Horizontal");
+            float movVertical = Input.GetAxis("Vertical");
 
-        Vector3 movimiento = new Vector3(movHorizontal, 0.0f, movVertical);
+            Vector3 movimiento = new Vector3(movHorizontal, 0.0f, movVertical);
 
-        rb.AddForce(movimiento * velocidad);
-        camara.transform.position = this.transform.position + offset;
+            rb.AddForce(movimiento * velocidad);
+            camara.transform.position = this.transform.position + offset;
+            playDeathByFallSound();
+        }
+        else
+        {
+            //Te has muerto, play sound cambiar escena
+        }
+
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,6 +56,19 @@ public class playerMovimiento : MonoBehaviour
         GameObject goPlayer = GameObject.FindWithTag("Player");
 
         Vector3 v3PosJugador = goPlayer.transform.position;
+
+        //Debug.Log(v3PosJugador.y);
+
+        if(v3PosJugador.y < -10 && bIsAlive == true)
+        {
+            AudioSource audBSO =GameObject.FindWithTag("BSO").GetComponent<AudioSource>();
+            AudioSource audMuerte = GameObject.FindWithTag("SonidoCaida").GetComponent<AudioSource>();
+            audBSO.Stop();
+            audMuerte.Play();
+            bIsAlive = false;
+        }
+
+        
     }
 
 }

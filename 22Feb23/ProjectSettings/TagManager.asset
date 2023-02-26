@@ -10,6 +10,9 @@ TagManager:
   - txt3
   - txtEmpieza
   - suelo
+  - Trampa 1
+  - BSO
+  - SonidoCaida
   layers:
   - Default
   - TransparentFX
