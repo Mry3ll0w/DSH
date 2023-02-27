@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -185,21 +185,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7213111900732109551, guid: bebc70bb05087428bab17f969458ce9b, type: 3}
   m_PrefabInstance: {fileID: 7213111900393590635}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &475921802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 475921796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c34a1efaefbb4266957d4e7a3b978ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camara: {fileID: 932470616}
-  iVelocidad: 0
-  goPrefabSuelo: {fileID: 5769000149975396999, guid: 70bae45601621486c94b8a0f33731fe1, type: 3}
 --- !u!114 &475921808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,10 +197,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3843aa157140f450a991ab83046fa23a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 2
+  velocidad: 5
   camara: {fileID: 932470616}
   textoEstrella: {fileID: 0}
   textoVida: {fileID: 0}
+--- !u!114 &475921809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475921796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170e630960ac74a4aa76a4c89ed38d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goPrefabSuelo: {fileID: 1080724312}
 --- !u!1 &747849971
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +554,11 @@ Transform:
   m_Father: {fileID: 1829749845}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1080724312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5769000149975396999, guid: 70bae45601621486c94b8a0f33731fe1, type: 3}
+  m_PrefabInstance: {fileID: 5769000149688885910}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1829749844
 GameObject:
   m_ObjectHideFlags: 0

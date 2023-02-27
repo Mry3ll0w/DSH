@@ -9,7 +9,7 @@ public class GenerarSuelo : MonoBehaviour
     public GameObject goPrefabSuelo;
     private Vector3 v3PosicionLimite;
     public System.Random rnd;
-    public int r;
+    private int r;
 
     // Start is called before the first frame update
     void Start()
