@@ -12,6 +12,7 @@ public class playerMovimiento : MonoBehaviour
     public Text textoEstrella;
     public Text textoVida;
     private bool bIsAlive;
+    private int iPuntuacion;
 
 
     void Start()
@@ -19,6 +20,7 @@ public class playerMovimiento : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         offset = camara.transform.position;
         bIsAlive = true;
+        iPuntuacion = 0;
     }
 
     // Update is called once per frame
@@ -49,8 +51,17 @@ public class playerMovimiento : MonoBehaviour
         //Colisiones con la trampa (muerte)
         if(other.CompareTag("Trampa"))
         {
-            //Al chocar se plantea sonido de muerte y se pasa a la escena de muerte
+            AudioSource audBSO = GameObject.FindWithTag("BSO").GetComponent<AudioSource>();
 
+            AudioSource audMuerte = GameObject.FindWithTag("SonidoTrampa").GetComponent<AudioSource>();
+
+            audBSO.Stop();
+            audMuerte.Play();
+            bIsAlive = false;
+        }
+        if(other.tag == "Premio")
+        {
+            iPuntuacion++;
         }
     }
 

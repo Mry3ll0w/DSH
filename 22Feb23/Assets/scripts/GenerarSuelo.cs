@@ -59,10 +59,7 @@ public class GenerarSuelo : MonoBehaviour
         //Jugador
         GameObject goPlayer = GameObject.FindWithTag("Player");
 
-        Vector3 v3PosJugador = goPlayer.transform.position; //obtener posición de la pelota
-        Debug.Log("Limite z: " + v3PosicionLimite.z);
-        //Debug.Log("Valor poslimite " + v3PosicionLimite.z + "  Valor Jugador " + v3PosJugador.z);
-        //Debug.Log(v3PosJugador.z == v3PosicionLimite.z);
+        Vector3 v3PosJugador = goPlayer.transform.position; //obtener posici?n de la pelota
 
 
         if (v3PosJugador.z >= v3PosicionLimite.z)
@@ -85,7 +82,7 @@ public class GenerarSuelo : MonoBehaviour
     {
         GameObject goPlayer = GameObject.FindWithTag("Player");
         Vector3 v3PosJugador = goPlayer.transform.position;
-        Debug.Log("Limite x: " + v3PosicionLimite.x);
+  
 
         if (v3PosJugador.z >= v3PosicionLimite.z)
         {
