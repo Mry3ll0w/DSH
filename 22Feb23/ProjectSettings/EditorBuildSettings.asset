@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/EscenaContador.unity
+    guid: c914d776b10425845950c08a76b1c5f7
+  - enabled: 1
+    path: Assets/Scenes/Escena2.unity
+    guid: 9f89e00cbf70045c79a354abca3e40d0
+  - enabled: 1
+    path: Assets/Scenes/EscenaPerdedor.unity
+    guid: ad4faad80c444c94d9d2c223b15e0a1e
   m_configObjects: {}

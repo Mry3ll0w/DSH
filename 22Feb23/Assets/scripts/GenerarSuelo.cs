@@ -62,7 +62,7 @@ public class GenerarSuelo : MonoBehaviour
         Vector3 v3PosJugador = goPlayer.transform.position; //obtener posici?n de la pelota
 
 
-        if (v3PosJugador.z >= v3PosicionLimite.z)
+        if (v3PosJugador.z >= v3PosicionLimite.z && v3PosJugador.y >= 0)
         {
             for (int n = 0; n < 3; n++)
             {
@@ -84,7 +84,7 @@ public class GenerarSuelo : MonoBehaviour
         Vector3 v3PosJugador = goPlayer.transform.position;
   
 
-        if (v3PosJugador.z >= v3PosicionLimite.z)
+        if (v3PosJugador.z >= v3PosicionLimite.z && v3PosJugador.y >= 0)
         {
             for (int n = 0; n < 3; n++)
             {
