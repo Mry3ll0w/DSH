@@ -26,7 +26,6 @@ public class GenerarSuelo : MonoBehaviour
     void Update()
     {
         GeneracionSuelo();
-        //GeneracionSueloRec();
     }
 
     void SueloInicial()
@@ -43,8 +42,7 @@ public class GenerarSuelo : MonoBehaviour
             goPrefabTrampa, new Vector3(dValX, dValY, dValZ),
             Quaternion.identity) as GameObject;
         v3PosicionLimite.z = dValZ - 6;
-        //v3PosicionLimite.x = dValX - 3;
-        r = rnd.Next(1, 4);
+        r = rnd.Next(1, 2);
     }
 
     void GeneracionSuelo()
