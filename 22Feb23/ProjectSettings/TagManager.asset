@@ -13,6 +13,8 @@ TagManager:
   - Trampa 1
   - BSO
   - SonidoCaida
+  - Trampa
+  - SonidoTrampa
   layers:
   - Default
   - TransparentFX

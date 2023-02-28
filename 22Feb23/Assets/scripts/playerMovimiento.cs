@@ -13,6 +13,7 @@ public class playerMovimiento : MonoBehaviour
     public Text textoVida;
     private bool bIsAlive;
     private int iPuntuacion;
+    private Vector3 v3PosicionJugador;
 
 
     void Start()
@@ -21,6 +22,7 @@ public class playerMovimiento : MonoBehaviour
         offset = camara.transform.position;
         bIsAlive = true;
         iPuntuacion = 0;
+        v3PosicionJugador.z = 0;
     }
 
     // Update is called once per frame
@@ -37,6 +39,8 @@ public class playerMovimiento : MonoBehaviour
             rb.AddForce(movimiento * velocidad);
             camara.transform.position = this.transform.position + offset;
             playDeathByFallSound();
+
+           
         }
         else
         {
@@ -49,6 +53,7 @@ public class playerMovimiento : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Colisiones con la trampa (muerte)
+        Debug.Log(other.tag);
         if(other.CompareTag("Trampa"))
         {
             AudioSource audBSO = GameObject.FindWithTag("BSO").GetComponent<AudioSource>();
@@ -59,10 +64,7 @@ public class playerMovimiento : MonoBehaviour
             audMuerte.Play();
             bIsAlive = false;
         }
-        if(other.tag == "Premio")
-        {
-            iPuntuacion++;
-        }
+        
     }
 
     private void playDeathByFallSound()
