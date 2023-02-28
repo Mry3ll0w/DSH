@@ -175,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 43dd0dbe634ede54399601f9bb5dcb17, type: 2}
+  - {fileID: 2100000, guid: 4ab0881d54eb1594299d0acb528ca4da, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -574,7 +574,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: fa6fc294eb1c7db49b4486f65a301d0e, type: 3}
+    m_Font: {fileID: 12800000, guid: 3eb412f54a3de194289905ac07014a91, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0

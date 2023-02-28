@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class playerMovimiento : MonoBehaviour
 {
@@ -40,7 +40,7 @@ public class playerMovimiento : MonoBehaviour
         }
         else
         {
-            //Te has muerto, play sound cambiar escena
+            SceneManager.LoadScene("EscenaPerdedor", LoadSceneMode.Single);//Te has muerto, play sound cambiar escena
         }
 
 

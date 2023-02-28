@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CuentaAtras : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class CuentaAtras : MonoBehaviour
     void FixedUpdate(){
         if (contar){
             switch(mostrar){
-                case 0: Debug.Log("Saltar a otra escena");
+                case 0: SceneManager.LoadScene("Escena2", LoadSceneMode.Single);
                         break;
                 case 1: textoContador.text = "1"; 
                         break;
