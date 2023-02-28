@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class playerMovimiento : MonoBehaviour
 {
@@ -13,16 +14,19 @@ public class playerMovimiento : MonoBehaviour
     public Text textoVida;
     private bool bIsAlive;
     private int iPuntuacion;
+    public Text txtPuntuacion;
     private Vector3 v3PosicionJugador;
 
 
     void Start()
     {
+        StartCoroutine(killerFunction());
         rb = GetComponent<Rigidbody>();
         offset = camara.transform.position;
         bIsAlive = true;
         iPuntuacion = 0;
         v3PosicionJugador.z = 0;
+        txtPuntuacion.text = "Puntuacion: 0";
     }
 
     // Update is called once per frame
@@ -40,11 +44,22 @@ public class playerMovimiento : MonoBehaviour
             camara.transform.position = this.transform.position + offset;
             playDeathByFallSound();
 
-           
+            GameObject goPlayer = GameObject.FindWithTag("Player");
+            Vector3 v3PosJugadorActual = goPlayer.transform.position;
+
+            if(v3PosJugadorActual.z >= (v3PosicionJugador.z + 3)){
+                iPuntuacion++;
+                v3PosicionJugador.z = v3PosJugadorActual.z;
+            }
+            //Act Valor Text
+            txtPuntuacion.text = "Puntuacion: " + iPuntuacion;
+
+
+
         }
         else
         {
-            SceneManager.LoadScene("EscenaPerdedor", LoadSceneMode.Single);//Te has muerto, play sound cambiar escena
+           killerFunction();
         }
 
 
@@ -63,6 +78,8 @@ public class playerMovimiento : MonoBehaviour
             audBSO.Stop();
             audMuerte.Play();
             bIsAlive = false;
+
+            killerFunction();
         }
         
     }
@@ -85,6 +102,12 @@ public class playerMovimiento : MonoBehaviour
         }
 
         
+    }
+
+    IEnumerator killerFunction()
+    {
+        yield return new WaitForSeconds(8); // Espera 5 segundos
+        SceneManager.LoadScene("EscenaPerdedor", LoadSceneMode.Single);//Te has muerto, play sound cambiar escena
     }
 
 }

@@ -15,6 +15,7 @@ TagManager:
   - SonidoCaida
   - Trampa
   - SonidoTrampa
+  - txtPuntuacion
   layers:
   - Default
   - TransparentFX
