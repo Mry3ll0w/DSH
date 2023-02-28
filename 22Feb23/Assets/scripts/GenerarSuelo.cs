@@ -77,7 +77,7 @@ public class GenerarSuelo : MonoBehaviour
 
             }
             GameObject trampa = Instantiate(
-            goPrefabTrampa, new Vector3(dValX, dValY, dValZ),
+            goPrefabTrampa, new Vector3(dValX - 1, 0.55f, dValZ - 1),
             Quaternion.identity) as GameObject;
             //Actualizamos el valor de la posicion limite
             v3PosicionLimite.z = dValZ - 6;
@@ -101,7 +101,7 @@ public class GenerarSuelo : MonoBehaviour
                     Quaternion.identity) as GameObject;
             }
             GameObject trampa = Instantiate(
-            goPrefabTrampa, new Vector3(dValX, dValY, dValZ),
+            goPrefabTrampa, new Vector3(dValX - 1, 0.55f, dValZ - 1),
             Quaternion.identity) as GameObject;
             r = rnd.Next(1, 3);
         }
