@@ -7,6 +7,7 @@ public class GenerarSuelo : MonoBehaviour
 {
     private float dValX, dValY, dValZ;
     public GameObject goPrefabSuelo;
+    public GameObject goPrefabTrampa;
     private Vector3 v3PosicionLimite;
     public System.Random rnd;
     private int r;
@@ -38,6 +39,9 @@ public class GenerarSuelo : MonoBehaviour
                 Quaternion.identity) as GameObject;
 
         }
+        GameObject trampa = Instantiate(
+            goPrefabTrampa, new Vector3(dValX, dValY, dValZ),
+            Quaternion.identity) as GameObject;
         v3PosicionLimite.z = dValZ - 6;
         //v3PosicionLimite.x = dValX - 3;
         r = rnd.Next(1, 4);
@@ -62,7 +66,7 @@ public class GenerarSuelo : MonoBehaviour
         Vector3 v3PosJugador = goPlayer.transform.position; //obtener posici?n de la pelota
 
 
-        if (v3PosJugador.z >= v3PosicionLimite.z && v3PosJugador.y >= 0)
+        if (v3PosJugador.z >= v3PosicionLimite.z && v3PosJugador.y >= 1)
         {
             for (int n = 0; n < 3; n++)
             {
@@ -72,6 +76,9 @@ public class GenerarSuelo : MonoBehaviour
                     Quaternion.identity) as GameObject;
 
             }
+            GameObject trampa = Instantiate(
+            goPrefabTrampa, new Vector3(dValX, dValY, dValZ),
+            Quaternion.identity) as GameObject;
             //Actualizamos el valor de la posicion limite
             v3PosicionLimite.z = dValZ - 6;
             r = rnd.Next(1, 3);
@@ -84,7 +91,7 @@ public class GenerarSuelo : MonoBehaviour
         Vector3 v3PosJugador = goPlayer.transform.position;
   
 
-        if (v3PosJugador.z >= v3PosicionLimite.z && v3PosJugador.y >= 0)
+        if (v3PosJugador.z >= v3PosicionLimite.z && v3PosJugador.y >= 1)
         {
             for (int n = 0; n < 3; n++)
             {
@@ -93,7 +100,9 @@ public class GenerarSuelo : MonoBehaviour
                     goPrefabSuelo, new Vector3(dValX, dValY, dValZ),
                     Quaternion.identity) as GameObject;
             }
-            //v3PosicionLimite.x = dValX - 3;
+            GameObject trampa = Instantiate(
+            goPrefabTrampa, new Vector3(dValX, dValY, dValZ),
+            Quaternion.identity) as GameObject;
             r = rnd.Next(1, 3);
         }
     }
