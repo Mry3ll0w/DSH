@@ -708,10 +708,11 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: PROBUILDER_EXPERIMENTAL_FEATURES
+    Android: PROBUILDER_EXPERIMENTAL_FEATURES;CROSS_PLATFORM_INPUT;MOBILE_INPUT
     Server: PROBUILDER_EXPERIMENTAL_FEATURES
-    Standalone: PROBUILDER_EXPERIMENTAL_FEATURES
+    Standalone: PROBUILDER_EXPERIMENTAL_FEATURES;CROSS_PLATFORM_INPUT
     WebGL: PROBUILDER_EXPERIMENTAL_FEATURES
+    iPhone: CROSS_PLATFORM_INPUT;MOBILE_INPUT
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
