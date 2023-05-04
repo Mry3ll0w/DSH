@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,19 +10,14 @@ public class PlayerMovement : MonoBehaviour
 	public bool walking;
 	public Transform playerTrans;
 
+    private void Start()
+    {
+		playerAnim.SetTrigger("idle");
+		walking = false;
+    }
 
-	void FixedUpdate()
-	{
-		if (Input.GetKey(KeyCode.W))
-		{
-			//playerRigid.velocity = transform.forward * w_speed * Time.deltaTime;
-		}
-		if (Input.GetKey(KeyCode.S))
-		{
-			//playerRigid.velocity = -transform.forward * wb_speed * Time.deltaTime;
-		}
-	}
-	void Update()
+
+    void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.W))
 		{
@@ -77,6 +71,11 @@ public class PlayerMovement : MonoBehaviour
 				playerAnim.ResetTrigger("run");
 				playerAnim.SetTrigger("walk");
 			}
+		}
+        else
+        {
+			walking = false;
+			playerAnim.SetTrigger("idle");
 		}
 	}
 }
