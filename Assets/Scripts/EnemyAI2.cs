@@ -39,7 +39,8 @@ public class EnemyAI2 : MonoBehaviour
         }
         else
         {
-            ChasePlayer();
+            pathFinder.SetDestination(player.position);
+            pathFinder.speed = chaseSpeed;
         }
     }
 
@@ -72,17 +73,14 @@ public class EnemyAI2 : MonoBehaviour
         if (Vector3.Distance(player.position, transform.position) < chaseDistance)
         {
             chasing = true;
+            pathFinder.SetDestination(player.position);
+            pathFinder.speed = chaseSpeed;
         }
         else
         {
             chasing = false;
-            Debug.Log("No veo al jugador");
         }
     }
 
-    void ChasePlayer()
-    {
-        pathFinder.SetDestination(player.position);
-        pathFinder.speed = chaseSpeed;
-    }
+    
 }

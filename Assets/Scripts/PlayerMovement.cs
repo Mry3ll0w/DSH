@@ -18,64 +18,70 @@ public class PlayerMovement : MonoBehaviour
 
 
     void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.W))
-		{
-			playerAnim.SetTrigger("walk");
-			playerAnim.ResetTrigger("idle");
-			walking = true;
-			//steps1.SetActive(true);
-		}
-		if (Input.GetKeyUp(KeyCode.W))
-		{
-			playerAnim.ResetTrigger("walk");
-			playerAnim.SetTrigger("idle");
-			walking = false;
-			//steps1.SetActive(false);
-		}
-		if (Input.GetKeyDown(KeyCode.S))
-		{
-			playerAnim.SetTrigger("walkback");
-			playerAnim.ResetTrigger("idle");
-			//steps1.SetActive(true);
-		}
-		if (Input.GetKeyUp(KeyCode.S))
-		{
-			playerAnim.ResetTrigger("walkback");
-			playerAnim.SetTrigger("idle");
-			//steps1.SetActive(false);
-		}
-		if (Input.GetKey(KeyCode.A))
-		{
-			//playerTrans.Rotate(0, -ro_speed * Time.deltaTime, 0);
-		}
-		if (Input.GetKey(KeyCode.D))
-		{
-			//playerTrans.Rotate(0, ro_speed * Time.deltaTime, 0);
-		}
-		if (walking == true)
-		{
-			if (Input.GetKeyDown(KeyCode.LeftShift))
-			{
-				//steps1.SetActive(false);
-				//steps2.SetActive(true);
-				w_speed = w_speed + rn_speed;
-				playerAnim.SetTrigger("run");
-				playerAnim.ResetTrigger("walk");
-			}
-			if (Input.GetKeyUp(KeyCode.LeftShift))
-			{
-				//steps1.SetActive(true);
-				//steps2.SetActive(false);
-				//w_speed = olw_speed;
-				playerAnim.ResetTrigger("run");
-				playerAnim.SetTrigger("walk");
-			}
-		}
-        else
+    {
+        bool isMoving = false;
+
+        // Check for W key
+        if (Input.GetKeyDown(KeyCode.W))
         {
-			walking = false;
-			playerAnim.SetTrigger("idle");
-		}
-	}
+            playerAnim.SetTrigger("walk");
+            playerAnim.ResetTrigger("idle");
+            walking = true;
+            isMoving = true;
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            playerAnim.ResetTrigger("walk");
+            walking = false;
+        }
+
+        // Check for S key
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            playerAnim.SetTrigger("walkback");
+            playerAnim.ResetTrigger("idle");
+            isMoving = true;
+        }
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            playerAnim.ResetTrigger("walkback");
+        }
+
+        // Check for A key
+        if (Input.GetKey(KeyCode.A))
+        {
+            isMoving = true;
+        }
+
+        // Check for D key
+        if (Input.GetKey(KeyCode.D))
+        {
+            isMoving = true;
+        }
+
+        // Check for Left Shift key
+        if (walking)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                w_speed = w_speed + rn_speed;
+                playerAnim.SetTrigger("run");
+                playerAnim.ResetTrigger("walk");
+                isMoving = true;
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                playerAnim.ResetTrigger("run");
+                playerAnim.SetTrigger("walk");
+            }
+        }
+
+        // Check if not moving
+        if (!isMoving)
+        {
+            walking = false;
+            playerAnim.SetTrigger("idle");
+        }
+    }
+
 }
