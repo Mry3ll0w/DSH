@@ -7441,27 +7441,6 @@ CapsuleCollider:
   m_Height: 2.1020572
   m_Direction: 1
   m_Center: {x: -0.022167325, y: 0.93890154, z: 0.034510553}
---- !u!114 &2105824008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105824002}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa1a43d2f229548f39221126aeea292e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAnim: {fileID: 2105824003}
-  playerRigid: {fileID: 2115667463}
-  w_speed: 0
-  wb_speed: 0
-  olw_speed: 0
-  rn_speed: 0
-  ro_speed: 0
-  walking: 0
-  playerTrans: {fileID: 0}
 --- !u!114 &2105824010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7482,7 +7461,12 @@ MonoBehaviour:
   rn_speed: 0
   ro_speed: 0
   walking: 0
-  playerTrans: {fileID: 0}
+  playerTrans: {fileID: 2105824011}
+--- !u!4 &2105824011 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 538d455a6fa334609bfc0e3befb529d4, type: 3}
+  m_PrefabInstance: {fileID: 2105824000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2115005136
 GameObject:
   m_ObjectHideFlags: 0
