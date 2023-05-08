@@ -142,7 +142,7 @@ public class FieldOfView : MonoBehaviour
             checkedPositions.Add(navHit.position);
 
             // Ensure the random position is within the map boundaries and at a minimum distance from the enemy's current position
-            if (Vector3.Distance(navHit.position, Vector3.zero) <= mapBoundary && Vector3.Distance(navHit.position, transform.position) > wanderDistance * 0.5f)
+            if (Vector3.Distance(navHit.position, Vector3.zero) <= mapBoundary || Vector3.Distance(navHit.position, transform.position) > radius * 0.5f)
             {
                 pathFinder.SetDestination(navHit.position);
                 pathFinder.speed = wanderSpeed;
