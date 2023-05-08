@@ -10,7 +10,7 @@ public class FieldOfView : MonoBehaviour
     public float angle;
 
     public GameObject playerRef;
-
+    private Vector3 lastSpottedPlayerPosition;
     public LayerMask targetMask;
     public LayerMask obstructionMask;
 
@@ -49,10 +49,11 @@ public class FieldOfView : MonoBehaviour
             {
                 float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask) || Vector3.Distance(player.position, transform.position) < chaseDistance)
                 {
                     canSeePlayer = true;
                     chasing = true;
+                    lastSpottedPlayerPosition = player.position;
                 }
 
                 else
@@ -85,7 +86,8 @@ public class FieldOfView : MonoBehaviour
     private Vector3 startingPosition;
     private bool chasing = false;
 
-    
+    private HashSet<Vector3> checkedPositions = new HashSet<Vector3>();
+
 
     void Update()
     {
@@ -94,6 +96,14 @@ public class FieldOfView : MonoBehaviour
             wanderTimer += Time.deltaTime;
             if (wanderTimer >= wanderUpdateInterval)
             {
+                if(lastSpottedPlayerPosition.x != -999 && lastSpottedPlayerPosition.y != -999)
+                {
+                    pathFinder.SetDestination(lastSpottedPlayerPosition);//Cuando dejas de ver al jugador me muevo a la ultima posicion donde se le vio
+                    lastSpottedPlayerPosition.x = -999;
+                    lastSpottedPlayerPosition.y = -999;
+                    //Vaciamos el vector de posiciones visitadas para que pueda revisitarlas
+                    checkedPositions = new HashSet<Vector3>();
+                }
                 Wander();
                 wanderTimer = 0f;
             }
@@ -101,10 +111,13 @@ public class FieldOfView : MonoBehaviour
         }
         else
         {
+            transform.LookAt(player);
             pathFinder.SetDestination(player.position);
             pathFinder.speed = chaseSpeed;
         }
     }
+
+    
 
     void Wander()
     {
@@ -119,7 +132,16 @@ public class FieldOfView : MonoBehaviour
         UnityEngine.AI.NavMeshHit navHit;
         if (UnityEngine.AI.NavMesh.SamplePosition(randomDirection, out navHit, wanderDistance, UnityEngine.AI.NavMesh.AllAreas))
         {
-            // Asegúrese de que la posición aleatoria esté dentro de los límites del mapa y a una distancia mínima de la posición actual del enemigo
+            // Check if this position has already been checked before
+            if (checkedPositions.Contains(navHit.position))
+            {
+                return;
+            }
+
+            // Add the position to the HashSet to avoid checking it again in the future
+            checkedPositions.Add(navHit.position);
+
+            // Ensure the random position is within the map boundaries and at a minimum distance from the enemy's current position
             if (Vector3.Distance(navHit.position, Vector3.zero) <= mapBoundary && Vector3.Distance(navHit.position, transform.position) > wanderDistance * 0.5f)
             {
                 pathFinder.SetDestination(navHit.position);
@@ -128,20 +150,8 @@ public class FieldOfView : MonoBehaviour
         }
     }
 
-    /*
-    void LookForPlayer()
-    {
-        Debug.Log("Vi al jugador");
-        if (Vector3.Distance(player.position, transform.position) < chaseDistance)
-        {
-            chasing = true;
-            pathFinder.SetDestination(player.position);
-            pathFinder.speed = chaseSpeed;
-        }
-        else
-        {
-            chasing = false;
-        }
-    }
-    */
+
+
+
 }
+ 
