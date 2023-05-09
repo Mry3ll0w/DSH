@@ -587,7 +587,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'PM   0:00:27
+  m_text: 'PM   0:00:00
 
 
 
@@ -714,8 +714,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: {fileID: 1115765912}
-  month: {fileID: 0}
-  year: {fileID: 0}
 --- !u!1 &1316891492
 GameObject:
   m_ObjectHideFlags: 0
