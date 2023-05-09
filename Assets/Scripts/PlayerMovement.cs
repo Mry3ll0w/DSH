@@ -16,10 +16,9 @@ public class PlayerMovement : MonoBehaviour
 		walking = false;
     }
 
-
+    bool isMoving = false;
     void Update()
     {
-        bool isMoving = false;
 
         // Check for W key
         if (Input.GetKeyDown(KeyCode.W))
@@ -32,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.W))
         {
             playerAnim.ResetTrigger("walk");
+            playerAnim.SetTrigger("idle");
             walking = false;
         }
 
@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
             playerAnim.SetTrigger("walkback");
             playerAnim.ResetTrigger("idle");
             isMoving = true;
+            walking = true;
         }
         if (Input.GetKeyUp(KeyCode.S))
         {
