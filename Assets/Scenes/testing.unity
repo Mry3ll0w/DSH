@@ -677,6 +677,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1155529070}
+  - component: {fileID: 1155529071}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -700,6 +701,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1155529071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155529069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5deb6ac31222eb74c8d54296fecd145c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: {fileID: 1115765912}
+  month: {fileID: 0}
+  year: {fileID: 0}
 --- !u!1 &1316891492
 GameObject:
   m_ObjectHideFlags: 0
