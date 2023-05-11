@@ -6,6 +6,12 @@ public class TeleportOnCollision : MonoBehaviour
     public GameObject player;
     public List<GameObject> tpObjects;
     private CharacterController characterController;
+
+    //Gestion de evento de teletransporte
+    public delegate void TeleportationEvent(Vector3 v3PosicionJugador);
+    public static event TeleportationEvent OnTeleport;
+
+
     void Start()
     {
         // Initialize the list
@@ -31,11 +37,12 @@ public class TeleportOnCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("HHOLA");
-            characterController.enabled = false;
-            int randomIndex = Random.Range(0, tpObjects.Count);
-            player.transform.position = tpObjects[randomIndex].transform.position;
-            characterController.enabled = true;   
+        
+        characterController.enabled = false;
+        int randomIndex = Random.Range(0, tpObjects.Count);
+        player.transform.position = tpObjects[randomIndex].transform.position;
+        characterController.enabled = true;
+        OnTeleport(tpObjects[randomIndex].transform.position);
     }
 
 }

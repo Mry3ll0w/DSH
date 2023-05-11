@@ -151,7 +151,24 @@ public class FieldOfView : MonoBehaviour
     }
 
 
+    //Gestion de Teletransporte para fix de IA
+    void OnEnable()
+    {
+        // Subscribe to event
+        TeleportOnCollision.OnTeleport += TeleportHandler;
+    }
+
+    void OnDisable()
+    {
+        // Unsubscribe from event
+        TeleportOnCollision.OnTeleport -= TeleportHandler;
+    }
+
+    void TeleportHandler(Vector3 v3PosicionJugador)
+    {
+        lastSpottedPlayerPosition = v3PosicionJugador;
+        checkedPositions = new HashSet<Vector3>();
+    }
 
 
 }
- 
