@@ -7,6 +7,7 @@ public class DeathScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.tag);
         if (other.CompareTag("Enemy"))
         {
             // Replace the object
