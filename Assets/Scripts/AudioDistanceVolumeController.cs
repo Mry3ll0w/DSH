@@ -2,13 +2,18 @@ using UnityEngine;
 
 public class AudioDistanceVolumeController : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public AudioSource audioSource;
     public float maxDistance = 20f;
     public float minDistance = 5f;
     public float bufferDistance = 1f;
     public float minVolume = 0.1f;
     public float maxVolume = 1f;
+
+    private void Start()
+    {
+        player = GameObject.FindWithTag("Player").transform; 
+    }
 
     void Update()
     {

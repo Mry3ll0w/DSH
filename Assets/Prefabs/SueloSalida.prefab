@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ed5e7c18d914cfc9074bbc9405f7dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 4126721882261769359, guid: b5d5844a87228450184f409478dbc1ff, type: 3}
+  player: {fileID: 8868345877567246008, guid: 4e98a21e1bf89427bbb6bb47586e54a7, type: 3}
   tpObjects:
   - {fileID: 0}
 --- !u!1 &6115752010575360004
@@ -2506,7 +2506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ed5e7c18d914cfc9074bbc9405f7dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 4126721882261769359, guid: b5d5844a87228450184f409478dbc1ff, type: 3}
+  player: {fileID: 8868345877567246008, guid: 4e98a21e1bf89427bbb6bb47586e54a7, type: 3}
   tpObjects:
   - {fileID: 0}
 --- !u!1 &6115752011886351820
@@ -4027,5 +4027,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ed5e7c18d914cfc9074bbc9405f7dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 4126721882261769359, guid: b5d5844a87228450184f409478dbc1ff, type: 3}
+  player: {fileID: 8868345877567246008, guid: 4e98a21e1bf89427bbb6bb47586e54a7, type: 3}
   tpObjects: []

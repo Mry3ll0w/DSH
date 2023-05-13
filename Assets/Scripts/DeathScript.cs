@@ -28,6 +28,7 @@ public class DeathScript : MonoBehaviour
                 // Set the new camera as the main camera
                 newCamera.enabled = true;
                 newCamera.tag = "MainCamera";
+                //Cambio de escena a muerte
             }
         }
     }
