@@ -32,7 +32,7 @@ public class MainMenuLogic : MonoBehaviour
         loading.GetComponent<Canvas>().enabled = true;
         mainMenu.GetComponent<Canvas>().enabled = false;
         buttonSound.Play();
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("EscenaAlvaro");
     }
 
     public void OptionsButton()
