@@ -390,11 +390,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: F
+    m_Name: 1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: f
+    positiveButton: 1
     altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000
@@ -406,11 +406,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: F
+    m_Name: 2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: f
+    positiveButton: 2
     altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000
@@ -422,11 +422,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: F
+    m_Name: 3
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: f
+    positiveButton: 3
     altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000
@@ -438,11 +438,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: F
+    m_Name: 4
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: f
+    positiveButton: 4
     altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000
