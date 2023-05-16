@@ -6,6 +6,8 @@ TagManager:
   tags:
   - TP
   - Enemy
+  - Reach
+  - HUD
   layers:
   - Default
   - TransparentFX

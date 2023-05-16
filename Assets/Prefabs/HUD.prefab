@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 4056102641853472820}
   m_Layer: 0
   m_Name: HUD
-  m_TagString: Untagged
+  m_TagString: HUD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -599,3 +599,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: {fileID: 4056102640647173205}
+  text1: {fileID: 0}
+  text2: {fileID: 0}
