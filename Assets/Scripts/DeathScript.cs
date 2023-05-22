@@ -1,6 +1,6 @@
 
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class DeathScript : MonoBehaviour
 {
     [SerializeField] private GameObject replacementObjectPrefab;
@@ -28,8 +28,12 @@ public class DeathScript : MonoBehaviour
                 // Set the new camera as the main camera
                 newCamera.enabled = true;
                 newCamera.tag = "MainCamera";
-                //Cambio de escena a muerte
+                Invoke("LoadNextScene", 3f);
             }
         }
+    }
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene("escena Muerte");
     }
 }

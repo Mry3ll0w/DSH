@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EscenaAlvaro.unity
     guid: 74296a0833febc741910daf2e65baecd
+  - enabled: 1
+    path: Assets/Scenes/escena Muerte.unity
+    guid: fe57c98a630a0d74692a9d96c5dd0e70
+  - enabled: 1
+    path: Assets/Scenes/EscenaMigue.unity
+    guid: d34c4bc7be37df84b9441ab5e2e2bd69
   m_configObjects: {}
