@@ -11,10 +11,6 @@ public class PauseGame : MonoBehaviour
     public bool on;
     public bool off;
 
-
-
-
-
     void Start()
     {
         menu.SetActive(false);
@@ -56,6 +52,7 @@ public class PauseGame : MonoBehaviour
 
     public void Exit()
     {
+        Debug.Log("App Has Exited");
         Application.Quit();
     }
 }

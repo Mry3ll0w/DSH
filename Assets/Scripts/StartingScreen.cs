@@ -16,9 +16,9 @@ public class StartingScreen : MonoBehaviour
     {
         startingScreen.SetActive(true);
         player = GameObject.FindWithTag("Player");
-        hud = GameObject.FindWithTag("HUD");
+        //hud = GameObject.FindWithTag("HUD");
         player.GetComponent<FirstPersonController>().enabled = false;
-        hud.SetActive(false);
+        //hud.SetActive(false);
 
         StartCoroutine(Starting());
     }
@@ -28,8 +28,7 @@ public class StartingScreen : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         startingScreen.SetActive(false);
         player.GetComponent<FirstPersonController>().enabled = true;
-        hud.SetActive(true);
-
+        //hud.SetActive(true);
     }
 
 

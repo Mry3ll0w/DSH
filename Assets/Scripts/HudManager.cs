@@ -17,6 +17,8 @@ public class HudManager : MonoBehaviour
 
     private void Start()
     {
+        text1.SetActive(false);
+        text2.SetActive(false);
         StartCoroutine(ManageTexts());
     }
 
@@ -26,12 +28,10 @@ public class HudManager : MonoBehaviour
         text1.SetActive(true);
         text1.GetComponent<Text>().enabled = true;
         yield return new WaitForSeconds(timer);
-        Destroy(text1);
 
         text2.SetActive(true);
         text2.GetComponent<Text>().enabled = true;
         yield return new WaitForSeconds(timer);
-        Destroy(text2);
 
     }
 
