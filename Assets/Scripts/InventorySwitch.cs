@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class InventorySwitch : MonoBehaviour
 {
-    public GameObject object01;
-    public GameObject object02;
-    public GameObject object03;
+    public GameObject target1;
+    public GameObject target2;
+    public GameObject target3;
 
+    public GameObject Ob1;
+    public GameObject Ob2;
+    public GameObject Ob3;
     void Start()
     {
 
@@ -17,30 +20,33 @@ public class InventorySwitch : MonoBehaviour
     {
         if(Input.GetButtonDown("1"))
         {
-            object01.SetActive(false);
-            object02.SetActive(false);
-            object03.SetActive(false);
+            Ob1.SetActive(false);
+            Ob2.SetActive(false);
+            Ob3.SetActive(false);
+            
         }
 
-        if (Input.GetButtonDown("2"))
+        if (Input.GetButtonDown("2") && target1.activeSelf)
         {
-            object01.SetActive(true);
-            object02.SetActive(false);
-            object03.SetActive(false);
-        }
-
-        if (Input.GetButtonDown("3"))
-        {
-            object01.SetActive(false);
-            object02.SetActive(true);
-            object03.SetActive(false);
+            Ob1.SetActive(true);
+            Ob2.SetActive(false);
+            Ob3.SetActive(false);
+            
         }
         
-        if (Input.GetButtonDown("4"))
+        if (Input.GetButtonDown("3") && target2.activeSelf)
         {
-            object01.SetActive(false);
-            object02.SetActive(false);
-            object03.SetActive(true);
+            Ob1.SetActive(false);
+            Ob2.SetActive(true);
+            Ob3.SetActive(false);
         }
+        
+        if (Input.GetButtonDown("4") && target3.activeSelf)
+        {
+            Ob1.SetActive(false);
+            Ob2.SetActive(false);
+            Ob3.SetActive(true);
+        }
+        
     }
 }
