@@ -8,6 +8,10 @@ TagManager:
   - Enemy
   - Reach
   - HUD
+  - can1
+  - Undefined
+  - can2
+  - can3
   layers:
   - Default
   - TransparentFX
