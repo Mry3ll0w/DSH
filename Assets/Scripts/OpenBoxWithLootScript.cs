@@ -29,7 +29,7 @@ public class OpenBoxWithLootScript : MonoBehaviour
 
     void Start()
     {
-        randomNumber = Random.Range(0, 2);
+        randomNumber = Random.Range(1, 1);
         Debug.Log(randomNumber);
         inReach = false;
         openText.SetActive(false);

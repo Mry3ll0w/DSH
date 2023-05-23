@@ -12,6 +12,9 @@ public class ObjectUtils : MonoBehaviour
 
     public DeathScript DeathScriptReference;
 
+    public AudioSource shitpost;
+
+
     void Start()
     {
 
@@ -35,7 +38,6 @@ public class ObjectUtils : MonoBehaviour
         else if (Input.GetMouseButtonDown(0) && target2 != null)
         {
             item.SetActive(false);
-            Drink.Play();
             Destroy(target2);
             DeathScriptReference.DrinkDeath();
 
@@ -44,8 +46,8 @@ public class ObjectUtils : MonoBehaviour
         {
             item.SetActive(false);
             Drink.Play();
+            shitpost.Play();
             Destroy(target3);
-
         }
     }
 }
