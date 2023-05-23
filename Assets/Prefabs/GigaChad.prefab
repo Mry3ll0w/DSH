@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6651010109438557543}
   - component: {fileID: 9105933528078028615}
   m_Layer: 0
-  m_Name: Gigachad
+  m_Name: GigaChad
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d0344474a8c574abeb21cebbd8a6ef30, type: 2}
+  - {fileID: 2100000, guid: c4d0c2d15deb1254fa6253da77c0e5cd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -178,7 +178,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7d78497e89bbc4f808fe3f9603e40828, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a86a08e99c5d4724cb2303bb09feb552, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
