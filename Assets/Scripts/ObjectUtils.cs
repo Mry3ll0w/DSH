@@ -6,9 +6,11 @@ public class ObjectUtils : MonoBehaviour
 {
     public GameObject item;
     public AudioSource Drink;
-    public AudioSource Switch;
+    public GameObject target1;
+    public GameObject target2;
+    public GameObject target3;
 
-    public Animator anim;
+    public DeathScript DeathScriptReference;
 
     void Start()
     {
@@ -18,9 +20,32 @@ public class ObjectUtils : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        target1 = GameObject.FindWithTag("can1");
+        target2 = GameObject.FindWithTag("can2");
+        target3 = GameObject.FindWithTag("can3");
+
+
+        if (Input.GetMouseButtonDown(0) && target1 != null)
+        {
             item.SetActive(false);
             Drink.Play();
+            Destroy(target1);
 
+        }
+        else if (Input.GetMouseButtonDown(0) && target2 != null)
+        {
+            item.SetActive(false);
+            Drink.Play();
+            Destroy(target2);
+            DeathScriptReference.DrinkDeath();
+
+        }
+        else if (Input.GetMouseButtonDown(0) && target3 != null)
+        {
+            item.SetActive(false);
+            Drink.Play();
+            Destroy(target3);
+
+        }
     }
 }
