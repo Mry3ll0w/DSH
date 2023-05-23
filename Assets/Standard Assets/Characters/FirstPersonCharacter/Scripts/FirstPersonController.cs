@@ -82,7 +82,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
-
+        /*
         //Gestion de Teletransporte para fix de IA
         void OnEnable()
         {
@@ -101,7 +101,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_RunSpeed += 4;
         }
-
+        */
         private void PlayLandingSound()
         {
             m_AudioSource.clip = m_LandSound;

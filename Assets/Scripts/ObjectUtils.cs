@@ -14,9 +14,10 @@ public class ObjectUtils : MonoBehaviour
 
     public AudioSource shitpost;
     //Gestion de evento de teletransporte
+    /*
     public delegate void SpeedUpEvent();
     public static event SpeedUpEvent OnSpeedUp;
-
+    */
     void Start()
     {
 

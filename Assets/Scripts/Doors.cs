@@ -6,8 +6,6 @@ using TMPro;
 public class Doors : MonoBehaviour
 {
     public Animator door;
-    public GameObject openText;
-    public GameObject closeText;
     public AudioSource doorSound;
 
     public bool inReach;
@@ -25,12 +23,10 @@ public class Doors : MonoBehaviour
         if (other.gameObject.tag == "Reach" && door.GetBool("Open") != true)
         {
             inReach = true;
-            openText.SetActive(true);
         }
         else
         {
             inReach = true;
-            closeText.SetActive(true);
         }
     }
 
@@ -39,8 +35,6 @@ public class Doors : MonoBehaviour
         if (other.gameObject.tag == "Reach")
         {
             inReach = false;
-            openText.SetActive(false);
-            closeText.SetActive(false);
         }
     }
 
@@ -59,8 +53,6 @@ public class Doors : MonoBehaviour
     }
     void DoorOpens()
     {
-        Debug.Log("It Opens");
-        
         door.SetBool("Open", true);
         door.SetBool("Closed", false);
         doorSound.Play();
@@ -70,7 +62,6 @@ public class Doors : MonoBehaviour
 
     void DoorCloses()
     {
-        Debug.Log("It Closes");
         door.SetBool("Open", false);
         door.SetBool("Closed", true);
         

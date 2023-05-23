@@ -7,12 +7,14 @@ public class PauseGame : MonoBehaviour
     public GameObject menu;
     public GameObject resume;
     public GameObject quit;
+    private GameObject mainMenu;
 
     public bool on;
     public bool off;
 
     void Start()
     {
+        mainMenu = GameObject.Find("MainMenuCanvas");
         menu.SetActive(false);
         off = true;
         on = false;
