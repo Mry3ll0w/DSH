@@ -42,7 +42,8 @@ public class TeleportOnCollision : MonoBehaviour
         int randomIndex = Random.Range(0, tpObjects.Count);
         player.transform.position = tpObjects[randomIndex].transform.position;
         characterController.enabled = true;
-        OnTeleport(tpObjects[randomIndex].transform.position);
+
+        OnTeleport(tpObjects[randomIndex].transform.position);//Llama al evento
     }
 
 }
