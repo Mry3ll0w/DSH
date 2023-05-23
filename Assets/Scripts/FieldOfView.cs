@@ -156,6 +156,7 @@ public class FieldOfView : MonoBehaviour
     {
         // Subscribe to event
         TeleportOnCollision.OnTeleport += TeleportHandler;
+
     }
 
     void OnDisable()
