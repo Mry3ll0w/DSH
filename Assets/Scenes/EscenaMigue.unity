@@ -9033,12 +9033,12 @@ MonoBehaviour:
   objectsToSpawn:
   - {fileID: 4948500259214936702, guid: 7d889d6f4434642ac9ce5b6fd19f541f, type: 3}
   - {fileID: 4948500259214936702, guid: 40d096bcb9bd947f296f132c12d62036, type: 3}
+  - {fileID: 4948500259214936702, guid: 3969097fab43b49ba8198796b299bc5f, type: 3}
   - {fileID: 1170474304}
   - {fileID: 4948500259214936702, guid: 822e38bb05ce34627bb621e1316a8ad4, type: 3}
-  - {fileID: 4948500259214936702, guid: e36311a27b4f1154b88ae68543720cbe, type: 3}
   spawnPoint: {fileID: 1162917101}
   maxTime: 120
-  minTime: 60
+  minTime: 20
 --- !u!1 &1170474304 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4948500259214936702, guid: e36311a27b4f1154b88ae68543720cbe, type: 3}
