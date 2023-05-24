@@ -29,7 +29,7 @@ public class HudManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(60);
+            yield return new WaitForSeconds(20);
             randomNumber = Random.Range(0, 6);
             switch (randomNumber)
             {

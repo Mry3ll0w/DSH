@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
     {
         SetRandomTime();
         time = 0;
-        SpawnObject();
+        //SpawnObject();
     }
 
     void Update()

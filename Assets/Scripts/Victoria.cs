@@ -13,6 +13,6 @@ public class Victoria : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        SceneManager.LoadScene("escena Muerte");
+        SceneManager.LoadScene("escena Victoria");
     }
 }
