@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EscenaMigue.unity
     guid: d34c4bc7be37df84b9441ab5e2e2bd69
+  - enabled: 1
+    path: Assets/Scenes/Escena Victoria.unity
+    guid: 69aec4e8178ebfb4ba1f6b43491b39c7
   m_configObjects: {}

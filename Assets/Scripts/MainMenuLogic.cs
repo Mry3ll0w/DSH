@@ -29,8 +29,8 @@ public class MainMenuLogic : MonoBehaviour
 
     public void StartButton()
     {
-        //loading.GetComponent<Canvas>().enabled = true;
-        //mainMenu.GetComponent<Canvas>().enabled = false;
+        loading.GetComponent<Canvas>().enabled = true;
+        mainMenu.GetComponent<Canvas>().enabled = false;
         buttonSound.Play();
         SceneManager.LoadScene("EscenaAlvaro");
     }
