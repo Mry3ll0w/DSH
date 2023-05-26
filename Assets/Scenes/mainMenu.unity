@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1168,7 +1168,7 @@ AudioSource:
   m_GameObject: {fileID: 388008263}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5b7ab1c1232f06d46b44d24e3fe44e04, type: 2}
   m_audioClip: {fileID: 8300000, guid: 5c620e3d69aad4cf9a94938471e96cdd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1430,6 +1430,7 @@ GameObject:
   - component: {fileID: 437709978}
   - component: {fileID: 437709977}
   - component: {fileID: 437709976}
+  - component: {fileID: 437709979}
   m_Layer: 0
   m_Name: OptionsCanvas
   m_TagString: Untagged
@@ -1521,6 +1522,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &437709979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437709974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15db8f60745f65042bc62e2ffd2f0fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundSlider: {fileID: 782964654}
+  masterMixer: {fileID: 24100000, guid: 5b7ab1c1232f06d46b44d24e3fe44e04, type: 2}
 --- !u!1 &444411459
 GameObject:
   m_ObjectHideFlags: 0
@@ -2515,12 +2530,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1775257661}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.0001
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 437709979}
+        m_TargetAssemblyTypeName: SoundSettings, Assembly-CSharp
+        m_MethodName: SetVolumeFromSlider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &816263599
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,6 +2849,7 @@ GameObject:
   - component: {fileID: 1013198325}
   - component: {fileID: 1013198324}
   - component: {fileID: 1013198326}
+  - component: {fileID: 1013198327}
   m_Layer: 0
   m_Name: MainMenuLogic
   m_TagString: Untagged
@@ -2866,7 +2894,7 @@ AudioSource:
   m_GameObject: {fileID: 1013198323}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5b7ab1c1232f06d46b44d24e3fe44e04, type: 2}
   m_audioClip: {fileID: 8300000, guid: 11137e63c33155b44b28bef10a9dd885, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2953,6 +2981,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1013198327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013198323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15db8f60745f65042bc62e2ffd2f0fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundSlider: {fileID: 0}
+  masterMixer: {fileID: 0}
 --- !u!1 &1059090688
 GameObject:
   m_ObjectHideFlags: 0
